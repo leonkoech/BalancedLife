@@ -55,7 +55,9 @@ export class CategoriesComponent implements OnInit {
   
   onChange(val:any, event: any){
     if(val.checked){
-      this.finalVal.push(val);
+     let uploadVal = val
+      uploadVal.checked = false
+      this.finalVal.push(uploadVal);
     }
     
   }
