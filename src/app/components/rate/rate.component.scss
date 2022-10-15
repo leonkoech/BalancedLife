@@ -1,0 +1,29 @@
+.rate{
+    &__container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    &__parent{
+        height: auto;
+        width: auto;
+        :hover{
+            background-color: rgb(194, 194, 194);
+            cursor: pointer;
+        }
+        }
+    &__item{
+        height: 80px;
+        width: 80px;
+        border: 1px solid black;
+        text-align: center;
+        line-height: 80px;
+        font-size: 1.4em;
+        
+        &_active{
+            background: black;
+            color: white
+        }
+    }
+    }
+}
