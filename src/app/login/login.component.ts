@@ -7,6 +7,9 @@ import { MatCardModule } from '@angular/material/card';
 import { FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
+import { SigninComponent } from 'src/components/signin/signin.component';
+import { SignupComponent } from 'src/components/signup/signup.component';
+
 
 
 

@@ -17,12 +17,20 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { RateComponent } from './components/rate/rate.component';
+import { LoginComponent } from './login/login.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { SigninComponent } from 'src/components/signin/signin.component';
+import { SignupComponent } from 'src/components/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
     CategoriesComponent,
-    RateComponent
+    RateComponent,
+    LoginComponent,
+    SigninComponent, 
+    SignupComponent
+
     
   ],
   imports: [
@@ -30,7 +38,7 @@ import { RateComponent } from './components/rate/rate.component';
     AppRoutingModule,
     BrowserAnimationsModule,AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule,
     MatCheckboxModule, FormsModule,MatInputModule,MatFormFieldModule,MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, MatTabsModule
     
   ],
   providers: [],
