@@ -15,11 +15,8 @@ export class CategoryComponent implements OnInit {
    doNext(object:any){
     console.log(object.name)
   }
-  goToRedirect(pagename:any){
-    this.router.navigate([pagename]);
+  goToRedirect(pagename:any, item:any){
+    this.router.navigate([pagename, item]);
   }
-
-  
-
 }
 
