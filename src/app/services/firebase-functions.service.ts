@@ -28,6 +28,15 @@ export class FirebaseFunctionsService {
 
   }
 
+  updateTask( categoryName:string, uniqueId: any, tasks: any, prescore: number): void{
+    let value  = {tasks:[...tasks], preScore:prescore}
+    this.userCollection.doc(uniqueId).collection("categories").doc(categoryName).set(value).then((t) => {
+     console.log(value)
+    }).catch((er) =>{
+       console.log(er)
+    });
+  }
+
   signUp(email:string, password:any){
     firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
@@ -41,6 +50,7 @@ export class FirebaseFunctionsService {
     // ..
   });
   }
+
   signIn(email:string, password:any){
     firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {

@@ -17,12 +17,19 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { RateComponent } from './components/rate/rate.component';
+import { DashBoardComponent } from './pages/dash-board/dash-board.component';
+import { DashboardCategoryComponent } from './components/dashboard-category/dashboard-category.component';
+import { DashboardChartComponent } from './components/dashboard-chart/dashboard-chart.component';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
     CategoriesComponent,
-    RateComponent
+    RateComponent,
+    DashBoardComponent,
+    DashboardCategoryComponent,
+    DashboardChartComponent
     
   ],
   imports: [
@@ -30,7 +37,8 @@ import { RateComponent } from './components/rate/rate.component';
     AppRoutingModule,
     BrowserAnimationsModule,AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule,
     MatCheckboxModule, FormsModule,MatInputModule,MatFormFieldModule,MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgChartsModule
     
   ],
   providers: [],
