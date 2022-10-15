@@ -75,8 +75,9 @@ export class FirebaseFunctionsService {
   signUp(email:string, password:any){
     firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
-    // Signed in 
+    // Signed up
     var user = userCredential.user;
+    this.router.navigate(["/category"]);
     // ...
   })
   .catch((error) => {
@@ -91,6 +92,7 @@ export class FirebaseFunctionsService {
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
+    this.router.navigate(["/dashboard"]);
     // ...
   })
   .catch((error) => {
