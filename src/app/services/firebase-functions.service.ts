@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreModule,AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { FieldValue } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore'
@@ -10,21 +11,21 @@ import 'firebase/compat/firestore'
 })
 export class FirebaseFunctionsService {
   userCollection: AngularFirestoreCollection;
-  constructor(private dbstore: AngularFirestore) {
+  constructor(private dbstore: AngularFirestore,private router: Router) {
     this.userCollection  = this.dbstore.collection('users');
    }
 
    fetchCategories(uniqueID: string){
 
    }
-   createCategory( categoryName:string, uniqueId: any, tasks: any, prescore: number, date: any, uid: string):void {
+   createCategory( categoryName:string, uniqueId: any, tasks: any, prescore: number, date: any, uid: string, expected: number):void {
     //
     // tasks should be an array of dictionaries
     let value  = {tasks:tasks.flat(), preScore:prescore, total:tasks.flat().length, completed: 0}
     let ref = this.userCollection.doc(uniqueId)
-    ref.collection("categories").doc(categoryName).set({tasks:tasks.flat(), preScore:prescore, total:tasks.flat().length, completed: 0}).then((t) => {
+    ref.collection("categories").doc(categoryName).set({tasks:tasks.flat(), preScore:prescore, total:tasks.flat().length, expected:expected, completed: 0}).then((t) => {
       ref.set({timeAdded: date, timeEnded: date, userID: uid, DocId: uniqueId}).then((val)=>{
-        console.log("uploaded")
+        this.router.navigate(['/category',categoryName]);
         // this.router.
       }).catch((er)=>{
         console.log(er)

@@ -1,41 +1,82 @@
-
+.container{
+        display: grid;
+        grid-template-columns: 49% 49%;
+        grid-column-gap: 1%;
+        width: 90%;
+        margin-left: 5%;
+        grid-row-gap: 0.1%;
+        padding-bottom: 10vh;
+        &__header{
+                width: 100%;
+                text-align: center;
+                height: 7vh;
+                margin-top: 2vh;
+                margin-bottom: 2vh;
+                h1{
+                        line-height: 7vh;
+    font-size: 2em;
+    text-transform: uppercase;
+                }
+        }
+}
 .newItem{
-    background-color: #acc5ff;
-    width: 90%;
-    margin-top: 20px;
-    height: auto;
-    margin-left: 5%;
-    padding: 1px;
+        background-color: #63747a;
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     &:hover{
+        cursor: pointer;
+        background-color: #667980;
+    }
+    &__selected{
+        background-color: #43555f;
+        &:hover{
+                cursor: default;
+                background-color: #43555f;
+            }
+    }
+    h1{
+        font-size: 3em;
+    margin: 30px;
+    }
+    p{
+        font-size:20px;
+        line-height: 25px;
+        padding: 25px;
+    }
+   
 
 }
-.newName{
-
-        margin-top: 100px;
-        margin-bottom: 50px;
-        margin-right: 150px;
-        margin-left: 80px;
-
-        font-size: 48px;
-
-        color: yellow;
-     
-    
-}
-.newDesc{
-    
-        margin-top: 50px;
-        margin-bottom: 100px;
-        margin-right: 150px;
-        margin-left: 80px;
-
-        font-size: 20px;
-
-        color: green;
-      
-    
-}
-.button{
-        width: 100px!important;
-        height: 100px!important;
-        color: blue;
+.button {
+        height: 60px;
+        width: 20vw;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: 0px;
+        &_primary {
+          background: black;
+          color: rgb(197, 197, 197);
+        }
+        &_secondary {
+          color: #d4d4d4;
+          text-align: center;
+          align-items: center;
+          width: 50px;
+          background: #539b53;
+          padding: 1px 5px;
+        }
+        &hover {
+          cursor: pointer;
+        }
+      }
+.float-right{
+        width: 90%;
+        display: flex;
+        align-items: right;
+        justify-content: end;
 }

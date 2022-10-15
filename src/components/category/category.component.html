@@ -1,11 +1,26 @@
-
-<div>
- <div *ngFor="let item of test" class = "newItem" (click)="goToRedirect('categoryPage', item.name)" >
-    <div>
-        <p class="newName">{{item["name"]}}</p>
-    </div>
-    <div>
+<div class="container__header">
+        <h1>Select topics that resonate with you the most</h1>
+</div>
+<div class="float-right">
+    <button class="button button_primary" (click)="dashboard()">Done</button>
+</div>
+<div class="container">
+    
+ <div *ngFor="let item of test" >
+    <div class = "newItem newItem__selected"  *ngIf="visited.includes(item.name)" >
+     
+        <h1>{{item["name"]}}</h1>
+      
         <p class="newDesc">{{item["description"]}}</p>
+   
     </div>
+     <div class = "newItem "  *ngIf="!visited.includes(item.name)" (click)="goToRedirect('categoryPage', item.name)" >
+        
+        <h1>{{item["name"]}}</h1>
+      
+        <p class="newDesc">{{item["description"]}}</p>
+  
+    </div>
+    
 </div>
 </div>

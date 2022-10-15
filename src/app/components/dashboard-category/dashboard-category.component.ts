@@ -13,7 +13,7 @@ import 'firebase/compat/firestore'
 export class DashboardCategoryComponent implements OnInit {
 
   clicked:boolean= true;
-  categoryName: string="friends"
+  categoryName: string="Health & Fitness"
   categoryData: any
   // data to be received should be 
   // name:
