@@ -9,9 +9,9 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'category', component:CategoryComponent},
+  {path: 'categoryPage/:name', component:CategoryPageComponent},
   {path: 'dashboard', component:DashBoardComponent},
   {path: 'categoriesPage', component:CategoriesComponent},
-  {path: 'categoryPage', component:CategoryPageComponent}
 ];
 
 @NgModule({
