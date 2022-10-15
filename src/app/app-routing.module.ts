@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'category', component:CategoryComponent},
-  {path: 'categoryPage', component:CategoryPageComponent}
+  {path: 'categoryPage/:name', component:CategoryPageComponent}
 ];
 
 @NgModule({

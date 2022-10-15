@@ -1,7 +1,6 @@
 
 <div>
-    <button (click)="goToRedirect('categoryPage')">Navigate</button> 
- <div *ngFor="let item of test" class = "newItem" (click)="doNext(item)" >
+ <div *ngFor="let item of test" class = "newItem" (click)="goToRedirect('categoryPage', item.name)" >
     <div>
         <p class="newName">{{item["name"]}}</p>
     </div>
