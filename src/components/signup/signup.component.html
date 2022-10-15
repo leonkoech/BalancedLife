@@ -1,1 +1,14 @@
-<p>signup works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>username</mat-label>
+      <input matInput placeholder="username" formControlName="email">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>password</mat-label>
+      <input type="password" matInput placeholder="password" formControlName="password">
+    </mat-form-field>
+    <button type="submit" mat-raised-button>Sign Up</button>
+  </form>
+
+  
