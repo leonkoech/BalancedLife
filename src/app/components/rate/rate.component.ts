@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./rate.component.scss']
 })
 export class RateComponent implements OnInit {
-  @Input() selectedVal = 11
+  @Input() selectedVal = -1
   @Output() emitter = new EventEmitter<number>();
   constructor() {
    }
