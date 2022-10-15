@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { FirebaseFunctionsService } from 'src/app/services/firebase-functions.service';
+import {FormBuilder} from '@angular/forms';
+
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -8,9 +10,40 @@ import { FirebaseFunctionsService } from 'src/app/services/firebase-functions.se
 })
 export class CategoriesComponent implements OnInit {
 
-  rating = 11;
+  rating = -1;
+  customTask = ""
+  tasks: any;
+  
+  finalVal: taskRecommendation[] = []
+  tasksCustom: taskRecommendation[] = []
+
+  tasksRecomendations: taskRecommendation[] = [
+    {
+      checked: false,
+      name: 'abdasdbas',
+      notes: '',
+    },
+    {
+      checked: false,
+      name: 'sadasdhf',
+      notes: ''
+    },
+    {
+      checked: false,
+      name: 'asdasdasd',
+      notes: ''
+    },
+    {
+      checked: false,
+      name: 'asdasdasda',
+      notes: ''
+    }
+  ]
+  
+
   constructor(
-    public test: FirebaseFunctionsService
+    public test: FirebaseFunctionsService,
+     private _formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
@@ -19,5 +52,41 @@ export class CategoriesComponent implements OnInit {
   setRate(val: number){
     this.rating = val
   }
+  
+  onChange(val:any, event: any){
+    if(val.checked){
+      this.finalVal.push(val);
+    }
+    
+  }
+  submitCustomTask(val:string){
+    let taskValue: taskRecommendation = {
+      name: val,
+      checked: false,
+      notes: ""
+    } 
+    this.tasksRecomendations.push(taskValue)
+    this.tasksCustom.push(taskValue)
+    this.customTask = ""
+  }
 
+  submitCategeory(){
+    if(this.rating>-1){
+      let value = {
+            tasks: this.finalVal,
+            preScore: this.rating
+          }
+          console.log(value)
+    }
+    else{
+      alert("please rate your area")
+    }
+   
+  }
+}
+
+class taskRecommendation {
+  checked: boolean = false;
+  name: string = '';
+  notes: string=''
 }
