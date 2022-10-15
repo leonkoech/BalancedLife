@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { FirebaseFunctionsService } from 'src/app/services/firebase-functions.service';
 import {FormBuilder} from '@angular/forms';
-
+import { DataGuardService } from 'src/app/services/data-guard.service';
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -10,9 +10,11 @@ import {FormBuilder} from '@angular/forms';
 })
 export class CategoriesComponent implements OnInit {
 
+  categoryName = "friends"
   rating = -1;
   customTask = ""
   tasks: any;
+  userId: any;
   
   finalVal: taskRecommendation[] = []
   tasksCustom: taskRecommendation[] = []
@@ -43,11 +45,13 @@ export class CategoriesComponent implements OnInit {
 
   constructor(
     public test: FirebaseFunctionsService,
-     private _formBuilder: FormBuilder
+     private user: DataGuardService,
   ) { }
 
   ngOnInit(): void {
-    // this.test.createCategory("test","test",[{name: "just", completed: false, notes: "test"}],4);
+    
+    this.userId  =  this.user.uid
+    
   }
   setRate(val: number){
     this.rating = val
@@ -55,11 +59,14 @@ export class CategoriesComponent implements OnInit {
   
   onChange(val:any, event: any){
     if(val.checked){
-      this.finalVal.push(val);
+     let uploadVal = val
+      uploadVal.checked = false
+      this.finalVal.push(uploadVal);
     }
     
   }
   submitCustomTask(val:string){
+
     let taskValue: taskRecommendation = {
       name: val,
       checked: false,
@@ -68,15 +75,22 @@ export class CategoriesComponent implements OnInit {
     this.tasksRecomendations.push(taskValue)
     this.tasksCustom.push(taskValue)
     this.customTask = ""
+
   }
 
-  submitCategeory(){
+
+
+  async submitCategeory(){
     if(this.rating>-1){
       let value = {
             tasks: this.finalVal,
             preScore: this.rating
           }
           console.log(value)
+          console.log(this.user.uid)
+          // let tt = await this.test.fetchTasks(this.user.uid,this.categoryName);
+          // console.log(tt)
+this.test.createCategory(this.categoryName,this.user.uid,[value.tasks],value.preScore,Date.now(),this.user.uid);
     }
     else{
       alert("please rate your area")
