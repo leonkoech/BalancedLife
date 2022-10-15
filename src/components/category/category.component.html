@@ -1,16 +1,12 @@
-
- <body>
-    
+<button>
+    navigate
+  
+</button>
  <div *ngFor="let item of test" class = "newItem" (click)="doNext(item)" >
     <div>
         <p class="newName">{{item["name"]}}</p>
-        
     </div>
     <div>
         <p class="newDesc">{{item["description"]}}</p>
     </div>
 </div>
-</body>
-
-
-
