@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
 import { SigninComponent } from 'src/components/signin/signin.component';
 import { SignupComponent } from 'src/components/signup/signup.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 

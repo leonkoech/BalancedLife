@@ -21,6 +21,10 @@ import { LoginComponent } from './login/login.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { SigninComponent } from 'src/components/signin/signin.component';
 import { SignupComponent } from 'src/components/signup/signup.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +42,7 @@ import { SignupComponent } from 'src/components/signup/signup.component';
     AppRoutingModule,
     BrowserAnimationsModule,AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule,
     MatCheckboxModule, FormsModule,MatInputModule,MatFormFieldModule,MatIconModule,
-    ReactiveFormsModule, MatTabsModule
+    ReactiveFormsModule, MatTabsModule,  MatCardModule, MatToolbarModule, FlexLayoutModule
     
   ],
   providers: [],

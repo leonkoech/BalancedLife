@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
 
   submit(): void {
     // the line commented out below adds to firebase
-    // this.authService.signUp(this.form.value.email, this.form.value.password);
+    this.authService.signUp(this.form.value.email, this.form.value.password);
     console.log(this.form.value)
   }
   

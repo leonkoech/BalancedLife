@@ -21,13 +21,10 @@ export class SigninComponent implements OnInit {
 
   submit(): void {
     // the line commented out below adds to firebase
-    // this.authService.signUp(this.form.value.email, this.form.value.password);
+    this.authService.signIn(this.form.value.email, this.form.value.password);
     console.log(this.form.value)
   }
 
-  
-
   ngOnInit(): void {
   }
-
 }
