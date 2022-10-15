@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreModule,AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { FieldValue } from '@angular/fire/firestore';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore'
@@ -19,11 +20,11 @@ export class FirebaseFunctionsService {
    createCategory( categoryName:string, uniqueId: any, tasks: any, prescore: number, date: any, uid: string):void {
     //
     // tasks should be an array of dictionaries
-    let value  = {tasks:tasks.flat(), preScore:prescore}
+    let value  = {tasks:tasks.flat(), preScore:prescore, total:tasks.flat().length, completed: 0}
     let ref = this.userCollection.doc(uniqueId)
-    ref.collection("categories").doc(categoryName).set(value).then((t) => {
+    ref.collection("categories").doc(categoryName).set({tasks:tasks.flat(), preScore:prescore, total:tasks.flat().length, completed: 0}).then((t) => {
       ref.set({timeAdded: date, timeEnded: date, userID: uid, DocId: uniqueId}).then((val)=>{
-        console.log(value)
+        console.log("uploaded")
         // this.router.
       }).catch((er)=>{
         console.log(er)
@@ -34,19 +35,25 @@ export class FirebaseFunctionsService {
     });
 
   }
+  completeTask(categoryName:string, completedTotal: any, uid: string, newValues: any){
+    this.userCollection.doc(uid).collection("categories").doc(categoryName).update({completed: completedTotal, tasks:newValues }).then((val)=>{
+        console.log(val)
+        // this.router.
+      }).catch((er)=>{
+        console.log(er)
+      }).catch((er) =>{
+       console.log(er)
+    });
+  }
   
-  fetchTasks(uniqueId: any,categoryName: any){
-  // data to be received should be 
-  // name:
-  // completed:
-  // total:
-  // tasks:
-  // this function fetches data on specific 
-   let completedTasks = 0;
-    let totalTasks=0;
-  this.userCollection.doc(uniqueId).collection("categories").doc(categoryName).get().toPromise().then((querySnapshot)=> {
+ async fetchTasks(userId: any,categoryName: any) {
+  console.log("running")
+  console.log(userId)
+  console.log(categoryName)
+  return await this.userCollection.doc(userId).collection("categories").doc(categoryName).get().toPromise().then((querySnapshot)=> {
     console.log(querySnapshot?.get);
-   console.log(querySnapshot?.data)
+   console.log(querySnapshot?.data())
+   return querySnapshot?.data()
 })
 .catch(function(error) {
     console.log("Error getting documents: ", error);

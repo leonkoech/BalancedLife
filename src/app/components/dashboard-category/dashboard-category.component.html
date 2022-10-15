@@ -1,10 +1,11 @@
-<div class="container">
+<div *ngIf="categoryData" class="container">
     <div class="container__header">
-        <h2>Category name</h2>
-    <span>Complete 7/10</span>
+        <h2>{{categoryName}}</h2>
+    
+    <span>Complete {{categoryData!.completed+"/"+categoryData!.total}}</span>
     </div>
     <div *ngIf="clicked">
-        <div *ngFor="let task of tasks; let i=index;">
+        <div *ngFor="let task of categoryData!.tasks; let i=index;">
             <div >
             <input type="checkbox" (change)="onChange(task, $event.target)" [(ngModel)]="task.checked" name="task{{i}}"> {{task.name}}
             </div>

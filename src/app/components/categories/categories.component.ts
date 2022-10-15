@@ -49,8 +49,9 @@ export class CategoriesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.test.fetchTasks(this.categoryName,"leonkoech");
+    
     this.userId  =  this.user.uid
+    
   }
   setRate(val: number){
     this.rating = val
@@ -79,7 +80,7 @@ export class CategoriesComponent implements OnInit {
 
 
 
-  submitCategeory(){
+  async submitCategeory(){
     if(this.rating>-1){
       let value = {
             tasks: this.finalVal,
@@ -87,7 +88,9 @@ export class CategoriesComponent implements OnInit {
           }
           console.log(value)
           console.log(this.user.uid)
-this.test.createCategory(this.categoryName,"leonkoech",[value.tasks],value.preScore,Date.now(),this.user.uid);
+          // let tt = await this.test.fetchTasks(this.user.uid,this.categoryName);
+          // console.log(tt)
+this.test.createCategory(this.categoryName,this.user.uid,[value.tasks],value.preScore,Date.now(),this.user.uid);
     }
     else{
       alert("please rate your area")
