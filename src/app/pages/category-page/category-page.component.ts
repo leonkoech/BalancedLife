@@ -8,13 +8,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CategoryPageComponent implements OnInit {
 
+
+  name:string  = ""
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      console.log(params["name"]); 
+      this.name = params["name"]; 
     });
   }
-  @Input name: string;
+  // @Input name: string;
 
 }

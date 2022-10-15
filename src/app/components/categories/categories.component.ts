@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { FirebaseFunctionsService } from 'src/app/services/firebase-functions.service';
 import {FormBuilder} from '@angular/forms';
@@ -10,7 +10,10 @@ import { DataGuardService } from 'src/app/services/data-guard.service';
 })
 export class CategoriesComponent implements OnInit {
 
-  categoryName = "friends"
+
+  @Input() catName: string=  ""
+
+  categoryName = this.catName
   rating = -1;
   customTask = ""
   tasks: any;

@@ -25,6 +25,7 @@ import { LoginComponent } from './login/login.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { SigninComponent } from 'src/components/signin/signin.component';
 import { SignupComponent } from 'src/components/signup/signup.component';
+import { CategoryPageComponent } from './pages/category-page/category-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { SignupComponent } from 'src/components/signup/signup.component';
     DashboardChartComponent,
     LoginComponent,
     SigninComponent, 
-    SignupComponent
+    SignupComponent,
+    CategoryPageComponent
 
     
   ],
