@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { categories } from '../../../src/static/Categories';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -8,15 +8,18 @@ import { categories } from '../../../src/static/Categories';
 })
 export class CategoryComponent implements OnInit {
    test=categories
-  constructor(
-    
-  ) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
    doNext(object:any){
     console.log(object.name)
   }
+  goToRedirect(pagename:any){
+    this.router.navigate([pagename]);
+  }
+
   
 
 }
+
