@@ -1,0 +1,20 @@
+.button{
+    height: 60px;
+    width: 100%;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 0px;
+    &_primary{
+      background: #68a6e3;
+    color: white;
+    }
+    &_secondary{
+        color: #35ae50;
+        text-align: center;
+        align-items: center;
+        width: 50px;
+    }
+    &hover{
+      cursor: pointer;
+    }
+}
