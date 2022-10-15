@@ -2,4 +2,30 @@
 <button>testing firebase</button>
 <p>{{rating}}</p>
 <app-rate  (emitter)="setRate($event)" [selectedVal]=rating></app-rate>
-
+<div *ngIf="rating>-1">
+    <h2>Please select tasks you would like to complete this week</h2>
+    <div *ngIf="rating>5">
+        <div *ngFor="let task of tasksCustom; let i=index;">
+            <div >
+              <input type="checkbox" (change)="onChange(task, $event.target)" [(ngModel)]="task.checked" name="task{{i}}"> {{task.name}}
+            </div>
+        </div>
+    </div>
+    <div *ngIf="rating<=5">
+        <div *ngFor="let task of tasksRecomendations; let i=index;">
+        <div >
+          <input type="checkbox" [(ngModel)]="task.checked"   (change)="onChange(task, $event.target)" name="task{{i}}"> {{task.name}}
+        </div>
+    </div>
+    </div>
+    
+    
+      <mat-form-field class="form-field" appearance="fill" >
+        <mat-label>Custom Task</mat-label>
+        <input matInput type="text" [(ngModel)]="customTask" class="halfWidth">
+        <div class="button button_secondary" *ngIf="customTask"  (click)="submitCustomTask(customTask)">
+          <mat-icon>check</mat-icon>Add
+        </div>
+      </mat-form-field><br>
+      <button class="button button_primary" (click)="submitCategeory()">Proceed</button>
+</div>

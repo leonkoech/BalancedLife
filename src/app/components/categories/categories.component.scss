@@ -1,0 +1,28 @@
+.button{
+    height: 60px;
+    width: 20vw;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 0px;
+    &_primary{
+      background: #68a6e3;
+    color: black;
+    }
+    &_secondary{
+        color: #35ae50;
+        text-align: center;
+        align-items: center;
+        width: 50px;
+    }
+    &hover{
+      cursor: pointer;
+    }
+}
+.halfWidth{
+    width: 50vw; 
+    height: 30px;
+    display: flex;
+}
+.form-field{
+    width: 50%;
+}
