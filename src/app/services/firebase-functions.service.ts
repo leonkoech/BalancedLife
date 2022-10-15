@@ -16,15 +16,42 @@ export class FirebaseFunctionsService {
    fetchCategories(uniqueID: string){
 
    }
-   createCategory( categoryName:string, uniqueId: any, tasks: any, prescore: number):void {
+   createCategory( categoryName:string, uniqueId: any, tasks: any, prescore: number, date: any, uid: string):void {
     //
     // tasks should be an array of dictionaries
-    let value  = {tasks:[...tasks], preScore:prescore}
-    this.userCollection.doc(uniqueId).collection("categories").doc(categoryName).set(value).then((t) => {
-     console.log(value)
+    let value  = {tasks:tasks.flat(), preScore:prescore}
+    let ref = this.userCollection.doc(uniqueId)
+    ref.collection("categories").doc(categoryName).set(value).then((t) => {
+      ref.set({timeAdded: date, timeEnded: date, userID: uid, DocId: uniqueId}).then((val)=>{
+        console.log(value)
+        // this.router.
+      }).catch((er)=>{
+        console.log(er)
+      })
+     
     }).catch((er) =>{
        console.log(er)
     });
+
+  }
+  
+  fetchTasks(uniqueId: any,categoryName: any){
+  // data to be received should be 
+  // name:
+  // completed:
+  // total:
+  // tasks:
+  // this function fetches data on specific 
+   let completedTasks = 0;
+    let totalTasks=0;
+  this.userCollection.doc(uniqueId).collection("categories").doc(categoryName).get().toPromise().then((querySnapshot)=> {
+    console.log(querySnapshot?.get);
+   console.log(querySnapshot?.data)
+})
+.catch(function(error) {
+    console.log("Error getting documents: ", error);
+
+})
 
   }
 

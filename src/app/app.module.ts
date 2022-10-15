@@ -21,6 +21,10 @@ import { DashBoardComponent } from './pages/dash-board/dash-board.component';
 import { DashboardCategoryComponent } from './components/dashboard-category/dashboard-category.component';
 import { DashboardChartComponent } from './components/dashboard-chart/dashboard-chart.component';
 import { NgChartsModule } from 'ng2-charts';
+import { LoginComponent } from './login/login.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { SigninComponent } from 'src/components/signin/signin.component';
+import { SignupComponent } from 'src/components/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,11 @@ import { NgChartsModule } from 'ng2-charts';
     RateComponent,
     DashBoardComponent,
     DashboardCategoryComponent,
-    DashboardChartComponent
+    DashboardChartComponent,
+    LoginComponent,
+    SigninComponent, 
+    SignupComponent
+
     
   ],
   imports: [
@@ -38,7 +46,8 @@ import { NgChartsModule } from 'ng2-charts';
     BrowserAnimationsModule,AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule,
     MatCheckboxModule, FormsModule,MatInputModule,MatFormFieldModule,MatIconModule,
     ReactiveFormsModule,
-    NgChartsModule
+    NgChartsModule,
+     MatTabsModule
     
   ],
   providers: [],

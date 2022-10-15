@@ -1,5 +1,4 @@
-<p>categories works!</p>
-<button>testing firebase</button>
+<h1>{{categoryName}}</h1>
 <p>{{rating}}</p>
 <app-rate  (emitter)="setRate($event)" [selectedVal]=rating></app-rate>
 <div *ngIf="rating>-1">
