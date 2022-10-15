@@ -1,28 +1,65 @@
-.button{
-    height: 60px;
-    width: 20vw;
-    font-size: 1.2em;
-    border-radius: 5px;
-    border: 0px;
-    &_primary{
-      background: #68a6e3;
+.button {
+  height: 60px;
+  width: 20vw;
+  font-size: 1.2em;
+  border-radius: 5px;
+  border: 0px;
+  &_primary {
+    background: #68a6e3;
     color: black;
-    }
-    &_secondary{
-        color: #35ae50;
-        text-align: center;
-        align-items: center;
-        width: 50px;
-    }
-    &hover{
-      cursor: pointer;
-    }
+  }
+  &_secondary {
+    color: #d4d4d4;
+    text-align: center;
+    align-items: center;
+    width: 50px;
+    background: #539b53;
+    padding: 1px 5px;
+    margin-left: 10px;
+  }
+  &hover {
+    cursor: pointer;
+  }
 }
-.halfWidth{
-    width: 50vw; 
-    height: 30px;
+.halfWidth {
+  width: 50vw;
+  height: 30px;
+  display: flex;
+}
+.fontt {
+  font-size: 2em;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+.form-field {
+  width: 50%;
+}
+.headings {
+  text-align: center;
+  margin: 3vh;
+}
+.title {
+  width: 100%;
+  text-align: center;
+  height: 7vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+
+  line-height: 7vh;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+.check{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.bottom_input{
+  width: 100%;
     display: flex;
-}
-.form-field{
-    width: 50%;
+    justify-content: center;
 }

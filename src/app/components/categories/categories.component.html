@@ -1,31 +1,34 @@
-<p>categories works!</p>
-<button>testing firebase</button>
-<p>{{rating}}</p>
+<h1 class="title">{{catName}}</h1>
+<h2 class="headings">Select how you feel about {{catName}} at the moment</h2>
+ 
 <app-rate  (emitter)="setRate($event)" [selectedVal]=rating></app-rate>
-<div *ngIf="rating>-1">
-    <h2>Please select tasks you would like to complete this week</h2>
+<h2 class="headings">Select how you would like to feel about {{catName}} at the end of the week</h2>
+<app-rate  (emitter)="setIdeal($event)" [selectedVal]=ideal></app-rate>
+<div class="check" *ngIf="rating>-1">
+<h2 class="headings">Select tasks you would be pursuing this week based on the category {{catName}}</h2>
     <div *ngIf="rating>5">
         <div *ngFor="let task of tasksCustom; let i=index;">
             <div >
-              <input type="checkbox" (change)="onChange(task, $event.target)" [(ngModel)]="task.checked" name="task{{i}}"> {{task.name}}
+              <mat-checkbox type="checkbox" class="fontt" (change)="onChange(task, $event)" [(ngModel)]="task.checked" name="task{{i}}"> {{task.name}}</mat-checkbox>
             </div>
         </div>
     </div>
     <div *ngIf="rating<=5">
         <div *ngFor="let task of tasksRecomendations; let i=index;">
         <div >
-          <input type="checkbox" [(ngModel)]="task.checked"   (change)="onChange(task, $event.target)" name="task{{i}}"> {{task.name}}
+          <mat-checkbox type="checkbox" class="fontt"  [(ngModel)]="task.checked"   (change)="onChange(task, $event)" name="task{{i}}"> {{task.name}}</mat-checkbox>
         </div>
     </div>
     </div>
-    
-    
+    <div class="bottom_input">
       <mat-form-field class="form-field" appearance="fill" >
         <mat-label>Custom Task</mat-label>
-        <input matInput type="text" [(ngModel)]="customTask" class="halfWidth">
-        <div class="button button_secondary" *ngIf="customTask"  (click)="submitCustomTask(customTask)">
+        <input matInput class="fontt" type="text" [(ngModel)]="customTask" class="halfWidth">    
+      </mat-form-field>
+      <div class="button button_secondary" *ngIf="customTask"  (click)="submitCustomTask(customTask)">
           <mat-icon>check</mat-icon>Add
         </div>
-      </mat-form-field><br>
+    </div>
+      <br>
       <button class="button button_primary" (click)="submitCategeory()">Proceed</button>
 </div>

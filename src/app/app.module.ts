@@ -17,6 +17,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { RateComponent } from './components/rate/rate.component';
+import { DashBoardComponent } from './pages/dash-board/dash-board.component';
+import { DashboardCategoryComponent } from './components/dashboard-category/dashboard-category.component';
+import { DashboardChartComponent } from './components/dashboard-chart/dashboard-chart.component';
+import { NgChartsModule } from 'ng2-charts';
 import { LoginComponent } from './login/login.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { SigninComponent } from 'src/components/signin/signin.component';
@@ -25,15 +29,20 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { CategoryPageComponent } from './pages/category-page/category-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
     CategoriesComponent,
     RateComponent,
+    DashBoardComponent,
+    DashboardCategoryComponent,
+    DashboardChartComponent,
     LoginComponent,
     SigninComponent, 
-    SignupComponent
+    SignupComponent,
+    CategoryPageComponent
 
     
   ],
@@ -42,7 +51,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     BrowserAnimationsModule,AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule,
     MatCheckboxModule, FormsModule,MatInputModule,MatFormFieldModule,MatIconModule,
-    ReactiveFormsModule, MatTabsModule,  MatCardModule, MatToolbarModule, FlexLayoutModule
+    ReactiveFormsModule, MatTabsModule,  MatCardModule, MatToolbarModule, FlexLayoutModule,
+    NgChartsModule,
+     MatTabsModule
     
   ],
   providers: [],
