@@ -1,5 +1,6 @@
-<h3 style="text-align:center;">Radar Chart</h3>
-<div class="container__chart">
+<h2 class="headings">Visualization Charts</h2>
+<div>
+    <div *ngIf="radarChartLabels.length>1" class="container__chart">
     <canvas baseChart
     [datasets]="radarChartDatasets"
     [options]="radarChartOptions"
@@ -8,3 +9,5 @@
 </canvas>
 
 </div>
+</div>
+

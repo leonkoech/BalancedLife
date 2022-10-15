@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
 import { FirebaseFunctionsService } from 'src/app/services/firebase-functions.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -16,18 +15,14 @@ export class SigninComponent implements OnInit {
   });
 
   constructor(
-    private authService: FirebaseFunctionsService
+    private authService: FirebaseFunctionsService,
   ) {}
 
   submit(): void {
     // the line commented out below adds to firebase
-    // this.authService.signUp(this.form.value.email, this.form.value.password);
-    console.log(this.form.value)
+    this.authService.signIn(this.form.value.email, this.form.value.password);
   }
-
   
-
   ngOnInit(): void {
   }
-
 }
