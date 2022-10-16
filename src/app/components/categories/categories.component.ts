@@ -6,7 +6,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import { DataGuardService } from "src/app/services/data-guard.service";
-import {suggestions} from "src/static/suggestions";
+import { suggestions } from "src/static/balanced_json";
 @Component({
   selector: "app-categories",
   templateUrl: "./categories.component.html",
@@ -14,9 +14,11 @@ import {suggestions} from "src/static/suggestions";
 })
 export class CategoriesComponent implements OnInit {
   @Input() catName: string = "";
+
+  recs = suggestions
   categoryName = this.catName;
   rating = -1;
-  ideal = 5;
+  ideal = 5 ;
   customTask = "";
   tasks: any;
   userId: any;
@@ -24,12 +26,8 @@ export class CategoriesComponent implements OnInit {
   finalVal: taskRecommendation[] = [];
   tasksCustom: taskRecommendation[] = [];
 
-  dict: any;
-  tasksRecomendations: taskRecommendation[] = [
-    for (dict:any in suggestions) {
 
-    }
-
+  tasksRecomendations: taskRecommendation[] = []
    
 
   constructor(
@@ -39,6 +37,14 @@ export class CategoriesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.recs[this.catName as  keyof typeof this.recs].map((item)=>{
+      let val= {
+        checked: false,
+        name: item,
+        notes: ""
+      }
+      this.tasksRecomendations.push(val)
+    });
     this.userId = this.user.uid;
   }
   setRate(val: number) {
@@ -72,8 +78,6 @@ export class CategoriesComponent implements OnInit {
         tasks: this.finalVal,
         preScore: this.rating
       };
-      console.log(value);
-      console.log(this.user.uid);
       // let tt = await this.test.fetchTasks(this.user.uid,this.categoryName);
       // console.log(tt)
       firebase.auth().onAuthStateChanged(async user => {
