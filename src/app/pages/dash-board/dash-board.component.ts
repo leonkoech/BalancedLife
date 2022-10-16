@@ -13,6 +13,7 @@ import "firebase/compat/firestore";
 export class DashBoardComponent implements OnInit {
   categories:string[] = []
   userId: string = ""
+  chartData: chartData[] = [];
   constructor(
     public firebaseService: FirebaseFunctionsService,
     private user: DataGuardService
@@ -29,9 +30,24 @@ export class DashBoardComponent implements OnInit {
      snapshot.docs.map((doc) =>{
 
       this.categories.push(doc.id)
+      console.log(doc.data())
+      
+        let val = {
+          name:doc.id,
+          ideal: doc.data()['expected'],
+          current: doc.data()['preScore']
+        }
+        this.chartData.push(val)
+      
+
 
     })}
     });
   }
  
+}
+class chartData{
+  name: string = "";
+  ideal: number = -1;
+  current: number = -1;
 }

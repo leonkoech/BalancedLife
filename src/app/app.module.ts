@@ -25,6 +25,10 @@ import { LoginComponent } from './login/login.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { SigninComponent } from 'src/components/signin/signin.component';
 import { SignupComponent } from 'src/components/signup/signup.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
 @NgModule({
   declarations: [
@@ -47,7 +51,7 @@ import { CategoryPageComponent } from './pages/category-page/category-page.compo
     AppRoutingModule,
     BrowserAnimationsModule,AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule,
     MatCheckboxModule, FormsModule,MatInputModule,MatFormFieldModule,MatIconModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, MatTabsModule,  MatCardModule, MatToolbarModule, FlexLayoutModule,
     NgChartsModule,
      MatTabsModule
     

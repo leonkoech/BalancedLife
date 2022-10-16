@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
 import { RadarChart } from 'radarchart-node';
 import firebase from 'firebase/compat/app';
@@ -14,17 +14,18 @@ import { FirebaseFunctionsService } from 'src/app/services/firebase-functions.se
 })
 export class DashboardChartComponent implements OnInit {
    // Radar
+   @Input() charData:any=[];
    title = 'ng2-charts-demo';
 
    public radarChartOptions: ChartConfiguration<'radar'>['options'] = {
-     responsive: false,
+     responsive: true,
    };
    public radarChartLabels: string[] = [];
    public idealData: number[]=[];
    public currentData: number[]=[];
    public radarChartDatasets: ChartConfiguration<'radar'>['data']['datasets'] = [
-    { data: this.idealData, label: 'Ideal' },
-    { data: this.currentData, label: 'Current' }
+    { data: this.charData.map((val:any)=>{return val.ideal}), label: 'Ideal' },
+    { data: this.charData.map((val:any)=>{return val.current}), label: 'Current' }
   ];
   constructor(
     public firebaseService: FirebaseFunctionsService
@@ -32,8 +33,10 @@ export class DashboardChartComponent implements OnInit {
 
   }
 
-  async ngOnInit(): Promise<void> {
-   await this.getAllDocs()
+  ngOnInit(): void {
+    console.log(this.charData.map((val:any)=>{return val.ideal}))
+
+    this.getAllDocs()
   }
   async getAllDocs() {
     await firebase.auth().onAuthStateChanged(async user => {
@@ -42,15 +45,17 @@ export class DashboardChartComponent implements OnInit {
      snapshot.docs.map((doc) =>{
 
       this.radarChartLabels.push(doc.id)
+      this.radarChartDatasets[0].data.push(doc.data()['expected'])
+      this.radarChartDatasets[1].data.push(doc.data()['preScore'])
       this.fetchTaskData(user.uid,doc.id)
-      console.log("test")
+      // console.log("test")
     })
   }
     });
-    this.radarChartDatasets= [
-      { data: this.idealData, label: 'Ideal' },
-      { data: this.currentData, label: 'Current' }
-    ];
+    // this.radarChartDatasets= [
+    //   { data: this.idealData, label: 'Ideal' },
+    //   { data: this.currentData, label: 'Current' }
+    // ];
 }
 async fetchTaskData(uid:any,categoryName:any) {
   let cat = await this.firebaseService.fetchTasks(

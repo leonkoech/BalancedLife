@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="form" (ngSubmit)="submit()" fxLayout="column">
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>email</mat-label>
       <input matInput placeholder="email" formControlName="email">
@@ -8,5 +8,5 @@
         <mat-label>password</mat-label>
       <input type="password" matInput placeholder="password" formControlName = "password">
     </mat-form-field>
-    <button type="submit" mat-raised-button>Sign In</button>
+    <button class="button button_primary" type="submit" mat-raised-button>Sign In</button>
   </form>
