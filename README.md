@@ -1,4 +1,4 @@
-# <span style="color:blue">some **We Are LifeScale** text</span> ⚖️
+# We Are LifeScale ⚖️
 
 <img width="250" alt="Screen Shot 2022-10-16 at 12 11 03 AM" src="https://user-images.githubusercontent.com/96270941/196023178-23519059-67ae-4c39-a254-39aef6aa5271.png">
 
