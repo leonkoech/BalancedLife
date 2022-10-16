@@ -17,6 +17,9 @@ We created LifeScale because we **know** that managing several aspects of our li
 
 LifeScale uses technology to help people track the many different aspects of their lives. We provide insight on users habits using **statistics** and **trends** to help them learn what works and what does not. We provide **recommendations** and **actionable steps** to help people achieve their goals.
 
+<img width="1432" alt="Screen Shot 2022-10-16 at 12 32 17 AM" src="https://user-images.githubusercontent.com/96270941/196023374-d98014a2-a6a1-4c4f-9643-530fca3108c9.png">
+
+
 ## 🛠 What We Do 🛠
 
 We allow users to rank different aspects of their lives on a scale of 0-10. From a selection of 10 categories, users can reflect on what those rankings are and what they want them to be. We recommend users with actions to take in order to improve categories ranking 5 and under, and users can add their own personal tasks that they wish to work on for the week. 
