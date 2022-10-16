@@ -1,27 +1,34 @@
-# BalancedLife
+# We Are LifeScale ⚖️
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+<img width="250" alt="Screen Shot 2022-10-16 at 12 11 03 AM" src="https://user-images.githubusercontent.com/96270941/196023178-23519059-67ae-4c39-a254-39aef6aa5271.png">
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## **Is your life balanced?**
 
-## Code scaffolding
+Everyday, people deal with many aspects of their life that cause them stress. Work, Finances, Relationships, Health, etc. All of these facets are important and yet it is so hard to prioritize everything.
+<img width="1000" alt="Screen Shot 2022-10-16 at 12 32 08 AM" src="https://user-images.githubusercontent.com/96270941/196023210-5be42e62-3e8a-46a4-b409-c401ebe241ee.png">
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ⭐️ Our Goal ⭐️
+We created LifeScale because we **know** that managing several aspects of our lives can be difficult. Our focus is on helping our users live more **balanced** and **meaningful** lives.
 
-## Build
+<img width="1000" alt="Screen Shot 2022-10-16 at 12 30 58 AM" src="https://user-images.githubusercontent.com/96270941/196023311-2b59e290-fa4e-4e33-b121-d1f66f09a538.png">
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 💡 Our Solution 💡
 
-## Running unit tests
+LifeScale uses technology to help people track the many different aspects of their lives. We provide insight on users habits using **statistics** and **trends** to help them learn what works and what does not. We provide **recommendations** and **actionable steps** to help people achieve their goals.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<img width="1000" alt="Screen Shot 2022-10-16 at 12 32 17 AM" src="https://user-images.githubusercontent.com/96270941/196023374-d98014a2-a6a1-4c4f-9643-530fca3108c9.png">
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🛠 What We Do 🛠
 
-## Further help
+We allow users to rank different aspects of their lives on a scale of 0-10. From a selection of 10 categories, users can reflect on what those rankings are and what they want them to be. We recommend users with actions to take in order to improve categories ranking 5 and under, and users can add their own personal tasks that they wish to work on for the week. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<img width="1000" alt="Screen Shot 2022-10-16 at 12 32 27 AM" src="https://user-images.githubusercontent.com/96270941/196023652-307a24c0-18be-4c29-8223-ad7fe6e7b325.png">
+
+
+## What's next for LifeScale? 🤔
+LifeScale looks 
+LifeScale is in the business of helping users manage their life. We plan on extending our services to help Tele-Health therapy services throughout the coutnry! LifeScale's ease of use and robust data management makes it the perfect tool for therapists to use with their patients. We plan on integrating LifeScale with built-in management systems. LifeScale gives concrete steps to take, making it easy for therapists and patients to make game plans for success.
+
+<img width="1000" alt="Screen Shot 2022-10-16 at 12 31 21 AM (1)" src="https://user-images.githubusercontent.com/96270941/196023336-d621f987-9258-40aa-b1d4-1a220829367e.png">
