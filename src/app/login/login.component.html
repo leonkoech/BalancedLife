@@ -1,41 +1,15 @@
-<div fxLayoutAlign="center center" fxFlexFill>
-    <mat-card fxFlex="25">
-        <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
-            <mat-tab label="Sign Up">
-                <app-signup></app-signup>
-            </mat-tab>
-            <mat-tab label="Sign In">
-                <app-signin></app-signin>
-            </mat-tab>
-            </mat-tab-group>
-        
-    </mat-card>
+<div class="container">
+    <h1 class="header">LifeScale</h1><br>
+    <div class="card">    
+        <mat-card class="mobile">
+            <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+                <mat-tab label="Sign Up">
+                    <app-signup></app-signup>
+                </mat-tab>
+                <mat-tab label="Sign In">
+                    <app-signin></app-signin>
+                </mat-tab>
+            </mat-tab-group> 
+        </mat-card>
+    </div>
 </div>
-
-
-  
-
-
-
-
-
-
-
-
-
-<!-- <div fxLayoutAlign="center center"fxFlexFill>
-    <mat-card fxFlex = "25">
-        <form fxLayoutAlign = "stretch" fxLayout = "column">
-            <mat-form-field>
-                <input id="Username" matInput placeholder = "Username">
-            </mat-form-field>
-      
-            <mat-form-field>
-                <input id="Password" matInput type = "password" placeholder = "Password">
-            </mat-form-field>
-            <button mat-button type = "submit" (click)="printUsernameAndPassword()">Login</button>
-        </form>
-    </mat-card>
-</div> -->
-
- 

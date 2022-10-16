@@ -5,9 +5,11 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { DashBoardComponent } from './pages/dash-board/dash-board.component';
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
 import { LoginComponent } from './login/login.component';
+import { IntroComponent } from './pages/intro/intro.component';
 
 const routes: Routes = [
-  {path: '', component:LoginComponent},
+  {path: '', component:IntroComponent},
+  {path: 'auth', component:LoginComponent},
   {path: 'category/:name', component:CategoryComponent},
   {path: 'category', component:CategoryComponent},
   {path: 'categoryPage/:name', component:CategoryPageComponent},

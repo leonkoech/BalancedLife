@@ -14,6 +14,11 @@ export class DashBoardComponent implements OnInit {
   categories:string[] = []
   userId: string = ""
   chartData: chartData[] = [];
+  ids:any = [
+   {id:"Utxk4R4gMig1t8iQ6UEp36nt3NW2", month: "09/04/2022 - 09/11/2022"},
+    {id: "hLcxM3DCOaRexutHCwLsYTwnz1C3", month: "09/11/2022 - 09/18/2022"},
+    {id: "q3u3XOA1mZhTvSyJb5HWxEYWycN2", month: "09/18/2022 - 09/23/2022"}
+  ]
   constructor(
     public firebaseService: FirebaseFunctionsService,
     private user: DataGuardService

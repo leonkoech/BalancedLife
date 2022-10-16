@@ -31,6 +31,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
 import { DashboardTableComponent } from './components/dashboard-table/dashboard-table.component';
+import { IntroComponent } from './pages/intro/intro.component';
+import { SampleChartsComponent } from './components/sample-charts/sample-charts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,9 @@ import { DashboardTableComponent } from './components/dashboard-table/dashboard-
     SigninComponent, 
     SignupComponent,
     CategoryPageComponent,
-    DashboardTableComponent
+    DashboardTableComponent,
+    IntroComponent,
+    SampleChartsComponent
 
     
   ],

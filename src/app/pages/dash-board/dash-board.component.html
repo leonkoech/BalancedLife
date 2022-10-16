@@ -8,8 +8,13 @@
     </div>
     <div>
         <h1 class="header">History</h1>
-        <h2 class="smaller_header">how you've been performing</h2>
+        <h2 class="smaller_header">here's how you've been performing</h2>
     </div>
-    
-</div>
+    <div>
+        <div *ngFor="let item of ids">
+            <h2 class="smaller_header">{{item.month}}</h2>
+            <app-sample-charts [id]="item.id"></app-sample-charts>
+        </div>
+    </div>
+</div> 
 
