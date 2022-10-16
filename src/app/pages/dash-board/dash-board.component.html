@@ -1,7 +1,7 @@
 <div>
     <app-dashboard-chart [charData]="chartData"></app-dashboard-chart>
     <div>
-        <h1>Change to graph happens realtime</h1>
+        <h1 class="header">Change to graph happens realtime</h1>
     </div>
     <div *ngIf="userId!=''">
         <app-dashboard-category *ngFor="let category of categories" [categoryName]="category" [uid]="userId"></app-dashboard-category>

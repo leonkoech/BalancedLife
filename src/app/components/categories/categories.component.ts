@@ -13,12 +13,12 @@ import { suggestions } from "src/static/balanced_json";
   styleUrls: ["./categories.component.scss"]
 })
 export class CategoriesComponent implements OnInit {
-  @Input() catName: any = "";
+  @Input() catName: string = "";
 
   recs = suggestions
   categoryName = this.catName;
   rating = -1;
-  ideal = 5;
+  ideal = 5 ;
   customTask = "";
   tasks: any;
   userId: any;
@@ -26,14 +26,8 @@ export class CategoriesComponent implements OnInit {
   finalVal: taskRecommendation[] = [];
   tasksCustom: taskRecommendation[] = [];
 
-  tasksRecomendations: taskRecommendation[] = 
-    this.recs[this.catName as keyof typeof this.recs].map((item)=>{
-      return {
-        checked: false,
-        name: item,
-        notes: ""
-      }
-    });
+  tasksRecomendations: taskRecommendation[] = []
+   
 
   constructor(
     public test: FirebaseFunctionsService,
@@ -42,6 +36,14 @@ export class CategoriesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.recs[this.catName as  keyof typeof this.recs].map((item)=>{
+      let val= {
+        checked: false,
+        name: item,
+        notes: ""
+      }
+      this.tasksRecomendations.push(val)
+    });
     this.userId = this.user.uid;
   }
   setRate(val: number) {
@@ -75,8 +77,6 @@ export class CategoriesComponent implements OnInit {
         tasks: this.finalVal,
         preScore: this.rating
       };
-      console.log(value);
-      console.log(this.user.uid);
       // let tt = await this.test.fetchTasks(this.user.uid,this.categoryName);
       // console.log(tt)
       firebase.auth().onAuthStateChanged(async user => {

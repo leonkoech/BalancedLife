@@ -29,13 +29,8 @@ export class DashboardChartComponent implements OnInit {
   ];
   constructor(
     public firebaseService: FirebaseFunctionsService
-  ) { 
-
-  }
-
+  ) { }
   ngOnInit(): void {
-    console.log(this.charData.map((val:any)=>{return val.ideal}))
-
     this.getAllDocs()
   }
   async getAllDocs() {
@@ -62,7 +57,6 @@ async fetchTaskData(uid:any,categoryName:any) {
     uid,
     categoryName
   );
-  console.log(this.idealData)
   this.idealData.push(cat!['expected'])
   this.currentData.push(cat!['preScore'])
   return cat;
