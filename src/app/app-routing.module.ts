@@ -15,7 +15,6 @@ const routes: Routes = [
   {path: 'categoryPage/:name', component:CategoryPageComponent},
   {path: 'dashboard', component:DashBoardComponent},
   {path: 'categoriesPage', component:CategoriesComponent},
-  { path: '',   redirectTo: '/dashboard', pathMatch: 'full' }, // redirect to `first-component`
 ];
 
 @NgModule({

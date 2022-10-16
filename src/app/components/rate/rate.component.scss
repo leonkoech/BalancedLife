@@ -19,6 +19,9 @@
         text-align: center;
         line-height: 80px;
         font-size: 1.4em;
+        @media only screen and (max-width: 600px) {
+            width: 8vw;
+          }
         
         &_active{
             background: black;
