@@ -6,6 +6,7 @@
 ## **Is your life balanced?**
 
 Everyday, people deal with many aspects of their life that cause them stress. Work, Finances, Relationships, Health, etc. All of these facets are important and yet it is so hard to prioritize everything.
+<img width="1432" alt="Screen Shot 2022-10-16 at 12 32 08 AM" src="https://user-images.githubusercontent.com/96270941/196023210-5be42e62-3e8a-46a4-b409-c401ebe241ee.png">
 
 ## ⭐️ Our Goal ⭐️
 We created LifeScale because we **know** that managing several aspects of our lives can be difficult. Our focus is on helping our users live more **balanced** and **meaningful** lives.
