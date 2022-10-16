@@ -37,7 +37,7 @@ LifeScale uses technology to help people track the many different aspects of the
 
 <img width="1000" alt="Screen Shot 2022-10-16 at 12 32 27 AM" src="https://user-images.githubusercontent.com/96270941/196023652-307a24c0-18be-4c29-8223-ad7fe6e7b325.png">
 
-We allow users to rank different aspects of their lives on a scale of 0-10. From a selection of 10 categories, users can reflect on what those rankings are and what they want them to be. We recommend users with actions to take in order to improve categories ranking 5 and under, and users can add their own personal tasks that they wish to work on for the week. 
+We allow users to rank different aspects of their lives on a scale of 0-10. From a selection of 10 categories, users can reflect on what those rankings are and what they want them to be. We recommend users with actions to take in order to improve/maintain whatever categories they choose, and users can add their own personal tasks that they wish to work on for the week. 
 
 
 
