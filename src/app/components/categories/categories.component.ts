@@ -6,14 +6,16 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import { DataGuardService } from "src/app/services/data-guard.service";
+import { suggestions } from "src/static/balanced_json";
 @Component({
   selector: "app-categories",
   templateUrl: "./categories.component.html",
   styleUrls: ["./categories.component.scss"]
 })
 export class CategoriesComponent implements OnInit {
-  @Input() catName: string = "";
+  @Input() catName: any = "";
 
+  recs = suggestions
   categoryName = this.catName;
   rating = -1;
   ideal = 5;
@@ -24,28 +26,14 @@ export class CategoriesComponent implements OnInit {
   finalVal: taskRecommendation[] = [];
   tasksCustom: taskRecommendation[] = [];
 
-  tasksRecomendations: taskRecommendation[] = [
-    {
-      checked: false,
-      name: "abdasdbas",
-      notes: ""
-    },
-    {
-      checked: false,
-      name: "sadasdhf",
-      notes: ""
-    },
-    {
-      checked: false,
-      name: "asdasdasd",
-      notes: ""
-    },
-    {
-      checked: false,
-      name: "asdasdasda",
-      notes: ""
-    }
-  ];
+  tasksRecomendations: taskRecommendation[] = 
+    this.recs[this.catName as keyof typeof this.recs].map((item)=>{
+      return {
+        checked: false,
+        name: item,
+        notes: ""
+      }
+    });
 
   constructor(
     public test: FirebaseFunctionsService,
