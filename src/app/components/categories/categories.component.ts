@@ -6,6 +6,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import { DataGuardService } from "src/app/services/data-guard.service";
+import {suggestions} from "src/static/suggestions";
 @Component({
   selector: "app-categories",
   templateUrl: "./categories.component.html",
@@ -13,7 +14,6 @@ import { DataGuardService } from "src/app/services/data-guard.service";
 })
 export class CategoriesComponent implements OnInit {
   @Input() catName: string = "";
-
   categoryName = this.catName;
   rating = -1;
   ideal = 5;
@@ -24,28 +24,12 @@ export class CategoriesComponent implements OnInit {
   finalVal: taskRecommendation[] = [];
   tasksCustom: taskRecommendation[] = [];
 
+  
   tasksRecomendations: taskRecommendation[] = [
-    {
-      checked: false,
-      name: "abdasdbas",
-      notes: ""
-    },
-    {
-      checked: false,
-      name: "sadasdhf",
-      notes: ""
-    },
-    {
-      checked: false,
-      name: "asdasdasd",
-      notes: ""
-    },
-    {
-      checked: false,
-      name: "asdasdasda",
-      notes: ""
-    }
+
   ];
+
+   
 
   constructor(
     public test: FirebaseFunctionsService,
