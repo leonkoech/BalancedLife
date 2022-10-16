@@ -1,7 +1,11 @@
 .container__chart{
     display: flex;
-    width: 30%;
+    width: 35%;
     align-items: center;
+    justify-content: center;
+}
+.center_containter{
+    display: flex;
     justify-content: center;
 }
 .headings {
@@ -14,4 +18,5 @@
     line-height: 7vh;
     font-size: 2em;
     text-transform: uppercase;
+    border-bottom: 1px solid black
   }
