@@ -1,0 +1,13 @@
+<h2 class="headings"></h2>
+<div class="center_containter">
+  <div *ngIf="radarChartLabels.length > 1" class="container__chart">
+    <canvas
+      baseChart
+      [datasets]="radarChartDatasets"
+      [options]="radarChartOptions"
+      [labels]="radarChartLabels"
+      [type]="'radar'"
+    >
+    </canvas>
+  </div>
+</div>
