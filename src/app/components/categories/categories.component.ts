@@ -24,10 +24,11 @@ export class CategoriesComponent implements OnInit {
   finalVal: taskRecommendation[] = [];
   tasksCustom: taskRecommendation[] = [];
 
-  
+  dict: any;
   tasksRecomendations: taskRecommendation[] = [
+    for (dict:any in suggestions) {
 
-  ];
+    }
 
    
 
