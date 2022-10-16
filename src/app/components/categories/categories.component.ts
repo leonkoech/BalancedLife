@@ -88,7 +88,7 @@ export class CategoriesComponent implements OnInit {
             value.preScore,
             Date.now(),
             user.uid,
-            // this.ideal
+            this.ideal
           );
         }
       });
