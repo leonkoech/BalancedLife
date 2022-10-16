@@ -1,1 +1,14 @@
-<p>dashboard-table works!</p>
+<div  >
+    <table>
+        <tr>
+          <th>Category</th>
+          <th>Current</th>
+          <th>Ideal</th>
+        </tr>
+        <tr *ngFor="let item of chartData">
+          <td>{{item.name}}</td>
+          <td>{{item.current}}</td>
+          <td>{{item.ideal}}</td>
+        </tr>
+      </table>
+</div>

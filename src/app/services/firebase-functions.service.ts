@@ -72,7 +72,7 @@ export class FirebaseFunctionsService {
     categoryName: string,
     completedTotal: any,
     uid: string,
-    newValues: any
+    newValues: any,
   ) {
     this.userCollection
       .doc(uid)
@@ -80,8 +80,7 @@ export class FirebaseFunctionsService {
       .doc(categoryName)
       .update({ completed: completedTotal, tasks: newValues })
       .then((val) => {
-        console.log('task completed');
-        console.log(val);
+        console.log('task updated ');
         // this.router.
       })
       .catch((er) => {
@@ -111,9 +110,8 @@ export class FirebaseFunctionsService {
     categoryName: string,
     uniqueId: any,
     tasks: any,
-    prescore: number
   ): void {
-    let value = { tasks: [...tasks], preScore: prescore };
+    let value = { tasks: [...tasks] };
     this.userCollection
       .doc(uniqueId)
       .collection('categories')

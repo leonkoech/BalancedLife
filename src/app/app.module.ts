@@ -30,6 +30,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
+import { DashboardTableComponent } from './components/dashboard-table/dashboard-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { CategoryPageComponent } from './pages/category-page/category-page.compo
     LoginComponent,
     SigninComponent, 
     SignupComponent,
-    CategoryPageComponent
+    CategoryPageComponent,
+    DashboardTableComponent
 
     
   ],

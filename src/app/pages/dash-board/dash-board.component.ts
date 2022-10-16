@@ -38,9 +38,6 @@ export class DashBoardComponent implements OnInit {
           current: doc.data()['preScore']
         }
         this.chartData.push(val)
-      
-
-
     })}
     });
   }

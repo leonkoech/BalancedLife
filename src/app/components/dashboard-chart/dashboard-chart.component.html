@@ -1,13 +1,14 @@
 <h2 class="headings">Visualization Charts</h2>
 <div class="center_containter">
-    <div *ngIf="radarChartLabels.length>1" class="container__chart">
-    <canvas baseChart
-    [datasets]="radarChartDatasets"
-    [options]="radarChartOptions"
-    [labels]="radarChartLabels"
-    [type]="'radar'">
-</canvas>
-
+  <div *ngIf="radarChartLabels.length > 1" class="container__chart">
+    <canvas
+      baseChart
+      [datasets]="radarChartDatasets"
+      [options]="radarChartOptions"
+      [labels]="radarChartLabels"
+      [type]="'radar'"
+    >
+    </canvas>
+  </div>
+  <app-dashboard-table class="table_container" [chartData]="charData"></app-dashboard-table>
 </div>
-</div>
-

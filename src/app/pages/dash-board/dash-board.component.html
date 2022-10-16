@@ -1,10 +1,14 @@
 <div>
     <app-dashboard-chart [charData]="chartData"></app-dashboard-chart>
     <div>
-        <h1 class="header">Change to graph happens realtime</h1>
+        <h1 class="header">Current Tasks</h1>
     </div>
     <div *ngIf="userId!=''">
         <app-dashboard-category *ngFor="let category of categories" [categoryName]="category" [uid]="userId"></app-dashboard-category>
+    </div>
+    <div>
+        <h1 class="header">History</h1>
+        <h2 class="smaller_header">how you've been performing</h2>
     </div>
     
 </div>

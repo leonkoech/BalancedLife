@@ -6,7 +6,9 @@
 }
 .center_containter{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 .headings {
     width: 100%;
@@ -20,3 +22,6 @@
     text-transform: uppercase;
     border-bottom: 1px solid black
   }
+  .table_container{
+    width: 35%;
+}
