@@ -1,57 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { DataGuardService } from 'src/app/services/data-guard.service';
-import { FirebaseFunctionsService } from 'src/app/services/firebase-functions.service';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore'
+import { Component, Input, OnInit } from "@angular/core";
+import { FirebaseFunctionsService } from "src/app/services/firebase-functions.service";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 
 @Component({
-  selector: 'app-dashboard-category',
-  templateUrl: './dashboard-category.component.html',
-  styleUrls: ['./dashboard-category.component.scss']
+  selector: "app-dashboard-category",
+  templateUrl: "./dashboard-category.component.html",
+  styleUrls: ["./dashboard-category.component.scss"]
 })
 export class DashboardCategoryComponent implements OnInit {
-
-  clicked:boolean= true;
-  categoryName: string="Health & Fitness"
-  categoryData: any
-  // data to be received should be 
-  // name:
-  // completed:
-  // total:
-  // tasks:
-  tasks: taskModel[]=[];
-  constructor(
-    public firebaseService: FirebaseFunctionsService,
-     private user: DataGuardService,
-  ) { 
-   
-  }
+  clicked: boolean = true;
+  @Input() categoryName: string = "";
+  @Input() uid: string = "";
+  categoryData: any;
+  tasks: taskModel[] = [];
+  constructor(public firebaseService: FirebaseFunctionsService) {}
 
   ngOnInit(): void {
-        this.fetchTaskData()
-    
-  
+    this.fetchTaskData();
   }
-  onChange(val:any, event: any){
-    // updata data in firebase
-    console.log(val)
+  onChange(val: any, event: any) {
+    console.log(val);
   }
-  async fetchTaskData(){
-    firebase.auth().onAuthStateChanged(async (user) => {
-      if (user) {
-  let cat = await this.firebaseService.fetchTasks(user.uid,this.categoryName);
-    this.categoryData = cat
-    console.log(cat)
-
-      }})
-  
-    
+  async fetchTaskData() {
+    let cat = await this.firebaseService.fetchTasks(
+      this.uid,
+      this.categoryName
+    );
+    this.categoryData = cat;
   }
-
 }
 class taskModel {
   checked: boolean = false;
-  name: string = '';
-  notes: string=''
+  name: string = "";
+  notes: string = "";
 }
