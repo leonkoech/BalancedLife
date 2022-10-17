@@ -49,8 +49,7 @@ On a larger scale, the industry we are catering to is the _**wellness market**_,
 
 ## So...what's next for LifeScale? 🤔
 
-<img width="1000" alt="Screen Shot 2022-10-17 at 11 14 45 AM" src="https://user-images.githubusercontent.com/96396888/196217787-f8200da0-b869-4464-ab48-e1597c9152ad.png">
-
+<img width="1432" alt="Screen Shot 2022-10-17 at 11 15 11 AM" src="https://user-images.githubusercontent.com/96396888/196218391-e369cfd3-d979-4d0a-ae22-d0aa8aa50a65.png">
 
 LifeScale looks to integrate with other habit tracking apps, allowing for users to _import their habits, tasks, and any other information that can help their workflow. Further plans include extending our services to help _**Tele-Health**_ and other therapy services throughout the country! LifeScale's ease of use and robust data management makes it the perfect tool for _**doctors**_ and _**therapists**_ to use with their patients and we plan on integrating LifeScale with built-in management systems. LifeScale gives concrete steps to take, making it easy for therapists and patients to make game plans for success.
 
@@ -58,7 +57,7 @@ LifeScale looks to integrate with other habit tracking apps, allowing for users 
 
 
 <h2 align="center"> Here Is Our Team! </h2>
-<img width="1432" alt="Screen Shot 2022-10-16 at 12 31 26 AM" src="https://user-images.githubusercontent.com/82193113/196028057-e7b7fbda-5e36-4499-a2bb-fe49b2a6fa60.png"> </img>
+<img width="1000" alt="Screen Shot 2022-10-17 at 11 14 45 AM" src="https://user-images.githubusercontent.com/96396888/196217787-f8200da0-b869-4464-ab48-e1597c9152ad.png">
 <h2></h2>
 
 <h2 align="center"> Balance Your Life With LifeScale </h2>
