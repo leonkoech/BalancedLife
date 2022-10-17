@@ -42,13 +42,16 @@ We allow users to rank different aspects of their lives on a scale of 0-10. From
 
 
 ## 👤 Who We Are For 👤
-<img width="1000" alt="Screen Shot 2022-10-16 at 12 30 58 AM" src="https://user-images.githubusercontent.com/96270941/196023311-2b59e290-fa4e-4e33-b121-d1f66f09a538.png"> </img>
+
+<img width="1000" alt="Screen Shot 2022-10-17 at 11 15 26 AM" src="https://user-images.githubusercontent.com/96396888/196217407-9b460e9b-4a03-4363-9825-b1f86d6ab525.png">
+
 On a larger scale, the industry we are catering to is the _**wellness market**_, but we work specifically with _**self-help**_ and _**personal development**_. Similar to other "habit tracking apps", our target audience are _**people ages 24 to 35**_, meaning we appeal to about _**14% of the US population!**_
 
 
 ## So...what's next for LifeScale? 🤔
 
-<img width="1000" alt="Screen Shot 2022-10-16 at 12 31 21 AM (1)" src="https://user-images.githubusercontent.com/96270941/196023336-d621f987-9258-40aa-b1d4-1a220829367e.png">
+<img width="1000" alt="Screen Shot 2022-10-17 at 11 14 45 AM" src="https://user-images.githubusercontent.com/96396888/196217787-f8200da0-b869-4464-ab48-e1597c9152ad.png">
+
 
 LifeScale looks to integrate with other habit tracking apps, allowing for users to _import their habits, tasks, and any other information that can help their workflow. Further plans include extending our services to help _**Tele-Health**_ and other therapy services throughout the country! LifeScale's ease of use and robust data management makes it the perfect tool for _**doctors**_ and _**therapists**_ to use with their patients and we plan on integrating LifeScale with built-in management systems. LifeScale gives concrete steps to take, making it easy for therapists and patients to make game plans for success.
 
